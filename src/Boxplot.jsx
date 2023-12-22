@@ -23,6 +23,13 @@ let yScale = d3.scaleLinear().domain(yrangeDic[dim]).range([h-pad,pad]);
   let xAxis=d3.axisBottom(xScale);
 let yAxis=d3.axisLeft(yScale);
 canvas.append('g').style("font","8px arial").call(yAxis).attr('transform','translate('+pad+',0)');
+for(let i=0;i<4;i++){
+canvas.append("line")         
+        .style("stroke", "black") 
+        .attr("x1", xScale(0.04+i*0.25))     
+        .attr("y1", yScale(0.2))             .attr("x2", xScale(0.24+i*0.25))    
+        .attr("y2", yScale(0.2));
+}     
 d3.csv("https://raw.githubusercontent.com/JBreitenbr/spotiStats/main/src/cluster_rnd.csv",(d)=>{
   canvas.append("circle").attr("cx",xScale(d.rnd)).attr("cy",yScale(d[dim])).attr("r",4).attr("fill",palette[d.cluster]).attr("class","circles").on("mouseover",(event,item)=>{return toolTip.style("visibility","visible").html("Track: "+d.track+"<br>" + "Artist: "+d.artist+"<br>"+dim.slice(0,1).toUpperCase()+dim.slice(1)+": "+d[dim]).style("left","40vw").style("top","5px")}).on("mouseleave",()=>{return toolTip.style("visibility","hidden")});
   });
