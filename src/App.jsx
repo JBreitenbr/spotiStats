@@ -1,8 +1,8 @@
 import './App.css'
 import Barchart from './Barchart';
-import Scatter from './Scatter';
+import Boxplot from './Boxplot';
 export default function App() {
   return (
-    <Scatter/>
+    <Boxplot/>
   )
 }

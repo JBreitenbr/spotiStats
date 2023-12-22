@@ -10,9 +10,9 @@ console.log(artists);
 const Barchart = () => {
    const svgRef = useRef();
    useEffect(()=>{
-let canvas=d3.select(svgRef.current).append("svg").attr("id","canvas");
-let w=+d3.select("#canvas").style("width").slice(0,-2);
-let h=+d3.select("#canvas").style("height").slice(0,-2); 
+let canvas=d3.select(svgRef.current).append("svg").attr("id","canvas_bar");
+let w=+d3.select("#canvas_bar").style("width").slice(0,-2);
+let h=+d3.select("#canvas_bar").style("height").slice(0,-2); 
 let pad=(1/7)*w;
 let xScale=d3.scaleLinear().domain([0,3600]).range([2.4*pad,w-0.2*pad]);
 let yScale = d3.scaleBand().domain(artists).range([pad,h-pad]).padding(0);
@@ -35,7 +35,7 @@ for(let i=0;i<30;i++)   {canvas.append("rect").attr("x",2.4*pad).attr("y",yScale
           .attr('height',(item)=>yScale.bandwidth())
           .attr('y',(item)=>h-yScale(item[0])).attr('x',(item)=>xScale(item[1])).attr("fill","blue");*/
    },[]);
-  return (<div><svg id="canvas" ref={svgRef} /></div>);
+  return (<div><svg id="canvas_bar" ref={svgRef} /></div>);
 }
 
 export default Barchart;

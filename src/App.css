@@ -16,7 +16,7 @@ body {
   background-color:#21234a;
 }
 
-#canvas {
+#canvas_bar,#canvas_box {
   width: 350px;
   height: 520px;
   background-color:papayawhip;
@@ -37,6 +37,16 @@ body {
 }
 
 .circles {
-  opacity:0.6;
-  
+  opacity:0.85;
+  }
+
+#selectButton {
+  margin-top: 5vh; 
+  border-radius: 5px;
+  height: 24px;
+  font-size: 12px;
+  text-align: center;
+  color: #21234a;
+  background-color: #f9f9f9;
+  border: 2px solid #21234a;
 }

@@ -15,9 +15,9 @@ let pad=(1/9)*w;let xScale=d3.scaleLinear().domain([0,1]).range([pad,w-pad]);
 let yScale = d3.scaleLinear().domain([0,1]).range([h-pad,pad]);
   let xAxis=d3.axisBottom(xScale);
 let yAxis=d3.axisLeft(yScale);
-canvas.append('g').style("font","8px arial").call(xAxis).attr('transform','translate(0,'+(h-pad)+')');                canvas.append('g').style("font","8px arial").call(yAxis).attr('transform','translate('+pad+',0)');
+/*canvas.append('g').style("font","8px arial").call(xAxis).attr('transform','translate(0,'+(h-pad)+')');   */             canvas.append('g').style("font","8px arial").call(yAxis).attr('transform','translate('+pad+',0)');
 d3.csv("https://raw.githubusercontent.com/JBreitenbr/spotiStats/main/src/cluster_rnd.csv",(d)=>{
-  canvas.append("circle").attr("cx",xScale(d.danceability)).attr("cy",yScale(d.valence)).attr("r",4).attr("fill",palette[d.cluster]).attr("class","circles").on("mouseover",(event,item)=>{return toolTip.style("visibility","visible").html("Track: "+d.track+"<br>" + "Artist: "+d.artist+"<br>").style("left","40vw").style("top","5px")}).on("mouseleave",()=>{return toolTip.style("visibility","hidden")});
+  canvas.append("circle").attr("cx",xScale(d.rnd)).attr("cy",yScale(d.instrumentalness)).attr("r",4).attr("fill",palette[d.cluster]).attr("class","circles").on("mouseover",(event,item)=>{return toolTip.style("visibility","visible").html("Track: "+d.track+"<br>" + "Artist: "+d.artist+"<br>").style("left","40vw").style("top","5px")}).on("mouseleave",()=>{return toolTip.style("visibility","hidden")});
   });
 
   },[]);
