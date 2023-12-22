@@ -22,3 +22,21 @@ body {
   background-color:papayawhip;
   margin-top: 5vh;
 }
+
+#tooltip {
+  position: absolute;
+  padding: 5px;
+  font-size: 11px;
+  width: min(40vw,180px);
+  border: 2px solid #21234a;
+  color: #21234a;
+  text-align: left;
+  background-color:#fff7eb;
+  border-radius: 5px;
+  visibility: hidden;
+}
+
+.circles {
+  opacity:0.6;
+  
+}
