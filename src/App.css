@@ -16,11 +16,15 @@ body {
   background-color:#21234a;
 }
 
-#canvas_bar,#canvas_box, #canvas_hist {
+#canvas_bar,#canvas_box, #canvas_hist,#canvas_heat {
   width: 350px;
   height: 520px;
   background-color:papayawhip;
   margin-top: 5vh;
+}
+
+#canvas_heat{
+  background-color:#f7f7f7;
 }
 
 #tooltip {
