@@ -16,7 +16,7 @@ body {
   background-color:#21234a;
 }
 
-#canvas_bar,#canvas_box {
+#canvas_bar,#canvas_box, #canvas_hist {
   width: 350px;
   height: 520px;
   background-color:papayawhip;
