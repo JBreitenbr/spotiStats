@@ -1,9 +1,9 @@
 import * as d3 from 'd3';
 import { useEffect, useRef,useState } from "react";
 import "./App.css";
-let corrDict={'1':["danceability","valence"],'2':["acousticness","loudness"],'3':["energy","acousticness"],'4':["energy","loudness"]};
+let corrDict={'1':["danceability","valence"],'2':["energy","acousticness"],'3':["energy","loudness"]};
 let yrangeDict={"loudness":[-40,0],"acousticness":[0,1],"valence":[0,1]};
-const Scatterplot = () => {  let [dim,setDim]=useState("2");
+const Scatterplot = () => {  let [dim,setDim]=useState("1");
 const handleChange = (event) => {
 setDim(event.target.value);
 };
@@ -34,9 +34,9 @@ d3.csv("https://raw.githubusercontent.com/JBreitenbr/spotiStats/main/src/kmeans_
   showDimension(dim);
 return(
 <><div><select id="selectButton" value={dim} onChange={handleChange}>
-  <option value="1">Danceability vs. Valence</option><option value="2">Acousticness vs. Loudness</option>
-<option value="3">Energy vs. Acousticness</option>
-<option value="4">Energy vs. Loudness</option>
+  <option value="1">Danceability vs. Valence</option>
+<option value="2">Energy vs. Acousticness</option>
+<option value="3">Energy vs. Loudness</option>
 </select></div></>)
 }
 
