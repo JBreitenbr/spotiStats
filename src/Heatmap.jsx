@@ -32,7 +32,7 @@ myColor.domain([0,750]);
     
 /*let myColor=d3.scaleLinear().range(["lightyellow","darkred"]).domain([0,750]);*/
 
-canvas.selectAll("rect").data(heatData).enter().append("rect").attr("x",(item)=>xScale(item[1])).attr("y",(item)=>yScale(item[2])).attr("width",xdir).attr("height",ydir).attr("fill",(item)=>{if(item[0]==0){return "#c3c3c3";}else{return myColor(item[0])}}).attr("stroke","darkred").attr("stroke-width","0.5px").on("mouseover",(event,item)=>{return toolTip.style("visibility","visible").html("Listening time [min]: "+item[0]).style("left","40vw").style("top","5px")}).on("mouseleave",()=>{return toolTip.style("visibility","hidden")});
+canvas.selectAll("rect").data(heatData).enter().append("rect").attr("x",(item)=>xScale(item[2])).attr("y",(item)=>yScale(item[3])).attr("width",xdir).attr("height",ydir).attr("fill",(item)=>{if(item[1]==0){return "#c3c3c3";}else{return myColor(item[1])}}).attr("stroke","darkred").attr("stroke-width","0.5px").on("mouseover",(event,item)=>{return toolTip.style("visibility","visible").html("Date: "+item[0]+"<br>"+"Listening Time [min]: "+item[1]).style("left","40vw").style("top","5px")}).on("mouseleave",()=>{return toolTip.style("visibility","hidden")});
 
 let xAxis=d3.axisBottom(xScale);
 let yAxis=d3.axisLeft(yScale);

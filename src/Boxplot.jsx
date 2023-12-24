@@ -48,7 +48,7 @@ canvas.append("line")
   .style("stroke", "black") 
   .attr("x1", xScale(0.08+i*0.25))    .attr("y1", yScale(Math.max(boxDict[dim][i]["lower"],yrangeDic[dim][0]))).attr("x2", xScale(0.20+i*0.25)).attr("y2", yScale(Math.max(boxDict[dim][i]["lower"],yrangeDic[dim][0])));
 }     
-d3.csv("https://raw.githubusercontent.com/JBreitenbr/spotiStats/main/src/cluster_rnd.csv",(d)=>{
+d3.csv("https://raw.githubusercontent.com/JBreitenbr/spotiStats/main/src/cluster_rndo.csv",(d)=>{
   canvas.append("circle").attr("cx",xScale(d.rnd)).attr("cy",yScale(d[dim])).attr("r",4).attr("fill",palette[d.cluster]).attr("class","circles").on("mouseover",(event,item)=>{return toolTip.style("visibility","visible").html("Track: "+d.track+"<br>" + "Artist: "+d.artist+"<br>"+dim.slice(0,1).toUpperCase()+dim.slice(1)+": "+d[dim]).style("left","40vw").style("top","5px")}).on("mouseleave",()=>{return toolTip.style("visibility","hidden")});
   });
 
