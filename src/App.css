@@ -16,7 +16,7 @@ body {
   background-color:#21234a;
 }
 
-#canvas_bar,#canvas_box, #canvas_hist,#canvas_heat {
+#canvas_bar,#canvas_box, #canvas_hist,#canvas_heat,#canvas_scatter {
   width: 350px;
   height: 520px;
   background-color:papayawhip;
