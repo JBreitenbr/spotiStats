@@ -12,6 +12,8 @@ setDim(event.target.value);
   let yrangeDic={"danceability":[0,1],"energy":[0,1],"loudness":[-40,0],"speechiness":[0,1],"acousticness":[0,1],"instrumentalness":[0,1],"liveness":[0,1],"valence":[0,1],"tempo":[50,220]};
 function showDimension(dim){
 d3.select("#canvas_box").remove();
+d3.select("#canvas_scatter").remove();
+d3.select("#canvas_hist").remove();
 let canvas=d3.select("body").append("svg")
 .attr("id","canvas_box");
 let toolTip=d3.select("body").append("div").attr("id","tooltip");

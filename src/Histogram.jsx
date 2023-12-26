@@ -11,6 +11,8 @@ setDim(event.target.value);
                          
 function showDimension(dim){
 d3.select("#canvas_hist").remove();
+d3.select("#canvas_box").remove();
+d3.select("#canvas_scatter").remove();
 let canvas=d3.select("body").append("svg")
 .attr("id","canvas_hist");
 let w=+d3.select("#canvas_hist").style("width").slice(0,-2);
