@@ -67,3 +67,17 @@ body {
    width: 650px;
  }
 }
+
+@media screen and (min-width:1050px){
+  #canvas_bar{
+    height: 670px;
+    width: 800px;
+  }
+}
+
+@media screen and (min-width:1300px){
+  #canvas_bar{
+    height: 800px;
+    width: 1000px;
+  }
+}
