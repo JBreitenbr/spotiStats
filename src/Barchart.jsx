@@ -8,6 +8,10 @@ for(let i=0;i<30;i++){
 }
 
 const Barchart = () => {
+  
+  d3.select("#canvas_box").remove();
+d3.select("#canvas_scatter").remove();
+d3.select("#canvas_hist").remove();
    const svgRef = useRef();
    useEffect(()=>{
 let canvas=d3.select(svgRef.current).append("svg").attr("id","canvas_bar");
