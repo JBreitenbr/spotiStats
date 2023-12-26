@@ -22,10 +22,6 @@ body {
   background-color:papayawhip;
   margin-top: 5vh;
 }
-/*
-#canvas_heat{
-  background-color:#f7f7f7;
-}*/
 
 #tooltip {
   position: absolute;
@@ -53,4 +49,21 @@ body {
   color: #21234a;
   background-color: #f9f9f9;
   border: 2px solid #21234a;
+}
+
+@media screen and (min-width:768px) and (min-aspect-ratio: 1.2) {
+
+ #canvas_bar {
+   height: 550px;
+   width: 580px;
+ }
+  
+}
+
+@media screen and (min-width:768px) and (max-aspect-ratio: 1.2) {
+
+ #canvas_bar {
+   height: 700px;
+   width: 650px;
+ }
 }
