@@ -12,7 +12,7 @@ const Navbar=() => {
         <Link to="/histogram">Histograms</Link>
         <Link to="/boxplot">Boxplots</Link>
         <Link to="/scatter">Scatterplots</Link>
-        
+  <Link to="/wordcloud">Wordcloud</Link>      
       </div>
     </div>
   );

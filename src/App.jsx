@@ -6,7 +6,7 @@ import Barchart from './Barchart';
 import Histogram from './Histogram';
 import Boxplot from './Boxplot';
 import Scatterplot from './Scatterplot';
-
+import Wordcloud from './Wordcloud';
 export default function App() {
   return (
     <>
@@ -18,6 +18,7 @@ export default function App() {
           <Route path="/histogram" element={<Histogram/>}/>
           <Route path="/boxplot" element={<Boxplot/>}/>
           <Route path="/scatter" element={<Scatterplot/>}/>
+                    <Route path="/wordcloud" element={<Wordcloud/>}/>
           </Routes>
         </Router>
     </>

@@ -2,6 +2,7 @@ import * as d3 from 'd3';
 import { useEffect, useRef,useState } from "react";
 import "./App.css";
 import {binsDict} from './binsDict';
+import {histStats} from './histStats';
 const Histogram = () => {  let [dim,setDim]=useState("danceability");
 const handleChange = (event) => {
 setDim(event.target.value);
@@ -26,6 +27,13 @@ canvas.append('g').style("font","8px arial").call(yAxis).attr('transform','trans
 canvas.append('g').style("font","8px arial").call(xAxis).attr('transform','translate(0,'+(h-pad)+')');
 let binWidth=(xScale(binsDict[dim]["xrange"][1])-xScale(binsDict[dim]["xrange"][0]))/50;
 console.log(binWidth);
+ canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",50).text("Mean: "+histStats[dim]["Mean"]).style("font","10px arial")
+canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",60).text("SD: "+histStats[dim]["SD"]).style("font","10px arial")
+canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",70).text("Min.: "+histStats[dim]["Min"]).style("font","10px arial")
+canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",80).text("Max.: "+histStats[dim]["Max"]).style("font","10px arial")
+canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",90).text("25%: "+histStats[dim]["Q1"]).style("font","10px arial")
+canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",100).text("Median: "+histStats[dim]["Median"]).style("font","10px arial")
+canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",110).text("75%: "+histStats[dim]["Q3"]).style("font","10px arial") ;
   canvas.selectAll("rect").data(binsDict[dim]["values"]).enter().append("rect").attr("y",(item)=>yScale(item[1])).attr("x",(item)=>xScale(item[0])).attr("width",binWidth).attr("height",(item)=>h-pad-yScale(item[1])).attr("fill",colorDict[dim]).attr("stroke","black").attr("stroke-width","0.5px").attr("class","bar");; }
   showDimension(dim);
 return(
