@@ -23,17 +23,24 @@ let xScale=d3.scaleLinear().domain(binsDict[dim]["xrange"]).range([pad,w-pad]);
 let yScale = d3.scaleLinear().domain(binsDict[dim]["yrange"]).range([h-pad,pad]);
   let xAxis=d3.axisBottom(xScale);
 let yAxis=d3.axisLeft(yScale);
-canvas.append('g').style("font","8px arial").call(yAxis).attr('transform','translate('+pad+',0)');
-canvas.append('g').style("font","8px arial").call(xAxis).attr('transform','translate(0,'+(h-pad)+')');
+canvas.append('g').style("font", `${w<h?(w/88+h/88):((w>700?w/110:w/93)+h/93)}px nunito`).call(yAxis).attr('transform','translate('+pad+',0)');
+canvas.append('g').style("font", `${w<h?(w/88+h/88):((w>700?w/110:w/93)+h/93)}px nunito`).call(xAxis).attr('transform','translate(0,'+(h-pad)+')');
 let binWidth=(xScale(binsDict[dim]["xrange"][1])-xScale(binsDict[dim]["xrange"][0]))/50;
-console.log(binWidth);
- canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",50).text("Mean: "+histStats[dim]["Mean"]).style("font","10px arial")
-canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",60).text("SD: "+histStats[dim]["SD"]).style("font","10px arial")
-canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",70).text("Min.: "+histStats[dim]["Min"]).style("font","10px arial")
-canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",80).text("Max.: "+histStats[dim]["Max"]).style("font","10px arial")
-canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",90).text("25%: "+histStats[dim]["Q1"]).style("font","10px arial")
-canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",100).text("Median: "+histStats[dim]["Median"]).style("font","10px arial")
-canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",110).text("75%: "+histStats[dim]["Q3"]).style("font","10px arial") ;
+canvas.append("text").attr("x",w/50).attr("y",w<400?25:40*h/500).text("Count").style("font", `${w<h?(w/77+h/77):((w>700?w/93:w/83)+h/83)}px nunito`);
+if(dim=="tempo"){
+  canvas.append("text").attr("x",0.88*w).attr("y",w<400?0.99*h:0.96*h).text("bpm").style("font", `${w<h?(w/77+h/77):((w>700?w/93:w/83)+h/83)}px nunito`);
+}
+if(dim=="loudness"){
+  canvas.append("text").attr("x",0.88*w).attr("y",w<400?0.99*h:0.96*h).text("dB").style("font",`${w<h?(w/77+h/77):((w>700?w/93:w/83)+h/83)}px nunito`);
+}
+  canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",40*h/500).text("N: "+histStats[dim]["N"]).style("font",`${w<h?(w/88+h/88):((w>700?w/110:w/93)+h/93)}px nunito`);
+canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",50*h/500).text("Mean: "+histStats[dim]["Mean"]).style("font",`${w<h?(w/88+h/88):((w>700?w/110:w/93)+h/93)}px nunito`);
+canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",60*h/500).text("SD: "+histStats[dim]["SD"]).style("font",`${w<h?(w/88+h/88):((w>700?w/110:w/93)+h/93)}px nunito`);
+canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",70*h/500).text("Min.: "+histStats[dim]["Min"]).style("font", `${w<h?(w/88+h/88):((w>700?w/110:w/93)+h/93)}px nunito`);
+canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",110*h/500).text("Max.: "+histStats[dim]["Max"]).style("font", `${w<h?(w/88+h/88):((w>700?w/110:w/93)+h/93)}px nunito`);
+canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",80*h/500).text("25%: "+histStats[dim]["Q1"]).style("font", `${w<h?(w/88+h/88):((w>700?w/110:w/93)+h/93)}px nunito`);
+canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",90*h/500).text("Median: "+histStats[dim]["Median"]).style("font", `${w<h?(w/88+h/88):((w>700?w/110:w/93)+h/93)}px nunito`);
+canvas.append("text").attr("x",dim=="tempo"?0.72*w:0.22*w).attr("y",100*h/500).text("75%: "+histStats[dim]["Q3"]).style("font", `${w<h?(w/88+h/88):((w>700?w/110:w/93)+h/93)}px nunito`);
   canvas.selectAll("rect").data(binsDict[dim]["values"]).enter().append("rect").attr("y",(item)=>yScale(item[1])).attr("x",(item)=>xScale(item[0])).attr("width",binWidth).attr("height",(item)=>h-pad-yScale(item[1])).attr("fill",colorDict[dim]).attr("stroke","black").attr("stroke-width","0.5px").attr("class","bar");; }
   showDimension(dim);
 return(

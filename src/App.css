@@ -17,7 +17,7 @@ body {
 }
 
 #canvas_bar,#canvas_box, #canvas_hist,#canvas_pic,#canvas_scatter {
-  width: 350px;
+  width: 355px;
   height: 520px;
   background-color:papayawhip;
   margin-top: 5vh;
@@ -72,17 +72,34 @@ body {
 @media screen and (min-width:768px) and (min-aspect-ratio: 1.2) {
 
  #canvas_bar,#canvas_hist {
-   height: 540px;
-   width: 580px;
+   height: 560px;
+   width: 610px;
+ }
+
+ #canvas_hist {
+   height: 500px;
  }
   
+ #selectButton {
+  height: 28px;
+  font-size: 14px;
+  }
 }
 
 @media screen and (min-width:768px) and (max-aspect-ratio: 1.2) {
 
  #canvas_bar,#canvas_hist {
-   height: 620px;
+   height: 640px;
    width: 650px;
+ }
+ 
+ #canvas_hist {
+   height: 620px;
+ }
+  
+ #selectButton {
+  height: 28px;
+  font-size: 14px;
  }
 }
 
@@ -91,6 +108,15 @@ body {
     height: 640px;
     width: 800px;
   }
+  
+   #canvas_hist {
+     height: 600px;
+   }
+
+   #selectButton {
+    height: 32px;
+    font-size: 16px;
+    }
 }
 
 @media screen and (min-width:1300px){
@@ -98,4 +124,14 @@ body {
     height: 750px;
     width: 1000px;
   }
+
+   #canvas_hist {
+     height: 700px;
+   }
+  
+   #selectButton {
+    height: 36px;
+    font-size: 18px;
+    }
+  
 }
