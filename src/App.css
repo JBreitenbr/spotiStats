@@ -17,7 +17,7 @@ body {
 }
 
 #canvas_bar,#canvas_box, #canvas_hist,#canvas_pic,#canvas_scatter {
-  width: 355px;
+  width: 358px;
   height: 520px;
   background-color:papayawhip;
   margin-top: 5vh;
@@ -31,7 +31,6 @@ body {
   position: absolute;
   padding: 5px;
   font-size: 11px;
-  width: min(40vw,180px);
   border: 2px solid #21234a;
   color: #21234a;
   text-align: left;
@@ -39,10 +38,11 @@ body {
   border-radius: 5px;
   visibility: hidden;
 }
-
+/*
 .circles {
   opacity:0.85;
-  }
+  stroke: black;
+  }*/
 
 #selectButton {
   margin-top: 5vh; 
@@ -71,12 +71,12 @@ body {
 
 @media screen and (min-width:768px) and (min-aspect-ratio: 1.2) {
 
- #canvas_bar,#canvas_hist {
+ #canvas_bar,#canvas_hist,#canvas_box,#canvas_pic {
    height: 560px;
    width: 610px;
  }
 
- #canvas_hist {
+ #canvas_hist,#canvas_box {
    height: 500px;
  }
   
@@ -84,16 +84,22 @@ body {
   height: 28px;
   font-size: 14px;
   }
+  
+.wordcloud {
+  margin-top:20vh;
+  height:450px;
+  width:450px;
+}
 }
 
 @media screen and (min-width:768px) and (max-aspect-ratio: 1.2) {
 
- #canvas_bar,#canvas_hist {
+ #canvas_bar,#canvas_hist,#canvas_box {
    height: 640px;
    width: 650px;
  }
  
- #canvas_hist {
+ #canvas_hist,#canvas_box {
    height: 620px;
  }
   
@@ -104,12 +110,12 @@ body {
 }
 
 @media screen and (min-width:1050px){
-  #canvas_bar,#canvas_hist{
+  #canvas_bar,#canvas_hist,#canvas_box{
     height: 640px;
     width: 800px;
   }
   
-   #canvas_hist {
+   #canvas_hist,#canvas_box{
      height: 600px;
    }
 
@@ -120,12 +126,12 @@ body {
 }
 
 @media screen and (min-width:1300px){
-  #canvas_bar,#canvas_hist{
+  #canvas_bar,#canvas_hist,#canvas_box{
     height: 750px;
     width: 1000px;
   }
 
-   #canvas_hist {
+   #canvas_hist,#canvas_box {
      height: 700px;
    }
   
