@@ -54,7 +54,7 @@ canvas.append("line")
  if(dim=="tempo") {canvas.append("text").attr("x",xScale(-0.08)).attr("y",0.04*h).text("bpm").style("font", `${w<h?(w/88+h/88):((w>700?w/110:w/93)+h/83)}px nunito`);}
    if(dim=="loudness") {canvas.append("text").attr("x",xScale(-0.08)).attr("y",0.04*h).text("dB").style("font", `${w<h?(w/88+h/88):((w>700?w/110:w/93)+h/83)}px nunito`);}
 d3.csv("https://raw.githubusercontent.com/JBreitenbr/spotiStats/main/src/kmeans_rnd.csv",(d)=>{
-  canvas.append("circle").attr("cx",xScale(d.rnd)).attr("cy",yScale(d[dim])).attr("r",4*w/355).attr("fill",palette[d.cluster]).attr("class","circles").style("stroke",strokeColors[d.cluster]).on("mouseover",(event,item)=>{return toolTip.style("visibility","visible").html("Track: "+d.track+"<br>" + "Artist: "+d.artist+"<br>"+dim.slice(0,1).toUpperCase()+dim.slice(1)+": "+d[dim]).style("font", `${w<h?(w/77+h/77):((w>700?w/93:w/83)+h/83)}px nunito`).style("padding",0.2*w).style("left",event.pageX-0.2*w+"px").style("top","14vh")}).on("mouseleave",()=>{return toolTip.style("visibility","hidden")});
+  canvas.append("circle").attr("cx",xScale(d.rnd)).attr("cy",yScale(d[dim])).attr("r",4*w/355).attr("fill",palette[d.cluster]).attr("class","circles").style("stroke",strokeColors[d.cluster]).on("mouseover",(event,item)=>{return toolTip.style("visibility","visible").html("Track: "+d.track+"<br>" + "Artist: "+d.artist+"<br>"+dim.slice(0,1).toUpperCase()+dim.slice(1)+": "+d[dim]).style("font", `${w<h?(w/77+h/77):((w>700?w/93:w/83)+h/83)}px nunito`).style("padding",0.2*w).style("left",event.pageX-0.2*w+"px").style("top",event.pageY-0.2*h+"px")}).on("mouseleave",()=>{return toolTip.style("visibility","hidden")});
   });
 
   }

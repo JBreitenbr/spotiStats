@@ -18,7 +18,7 @@ let canvas=d3.select("body").append("svg")
 .attr("id","canvas_hist");
 let w=+d3.select("#canvas_hist").style("width").slice(0,-2);
 let h=+d3.select("#canvas_hist").style("height").slice(0,-2); 
-let pad=(3/35)*w;
+let pad=(4/35)*w;
 let xScale=d3.scaleLinear().domain(binsDict[dim]["xrange"]).range([pad,w-pad]);
 let yScale = d3.scaleLinear().domain(binsDict[dim]["yrange"]).range([h-pad,pad]);
   let xAxis=d3.axisBottom(xScale);

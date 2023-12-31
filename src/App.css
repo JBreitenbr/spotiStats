@@ -71,12 +71,12 @@ body {
 
 @media screen and (min-width:768px) and (min-aspect-ratio: 1.2) {
 
- #canvas_bar,#canvas_hist,#canvas_box,#canvas_pic {
+ #canvas_bar,#canvas_hist,#canvas_box,#canvas_scatter,#canvas_pic {
    height: 560px;
    width: 610px;
  }
 
- #canvas_hist,#canvas_box {
+ #canvas_hist,#canvas_box,#canvas_scatter {
    height: 500px;
  }
   
@@ -94,12 +94,12 @@ body {
 
 @media screen and (min-width:768px) and (max-aspect-ratio: 1.2) {
 
- #canvas_bar,#canvas_hist,#canvas_box {
+ #canvas_bar,#canvas_hist,#canvas_box,#canvas_scatter {
    height: 640px;
    width: 650px;
  }
  
- #canvas_hist,#canvas_box {
+ #canvas_hist,#canvas_box,#canvas_scatter {
    height: 620px;
  }
   
@@ -110,12 +110,12 @@ body {
 }
 
 @media screen and (min-width:1050px){
-  #canvas_bar,#canvas_hist,#canvas_box{
+  #canvas_bar,#canvas_hist,#canvas_box,#canvas_scatter{
     height: 640px;
     width: 800px;
   }
   
-   #canvas_hist,#canvas_box{
+   #canvas_hist,#canvas_box,#canvas_scatter{
      height: 600px;
    }
 
@@ -126,12 +126,12 @@ body {
 }
 
 @media screen and (min-width:1300px){
-  #canvas_bar,#canvas_hist,#canvas_box{
+  #canvas_bar,#canvas_hist,#canvas_box,#canvas_scatter{
     height: 750px;
     width: 1000px;
   }
 
-   #canvas_hist,#canvas_box {
+   #canvas_hist,#canvas_box,#canvas_scatter{
      height: 700px;
    }
   
