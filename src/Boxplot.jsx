@@ -60,7 +60,7 @@ d3.csv("https://raw.githubusercontent.com/JBreitenbr/spotiStats/main/src/kmeans_
   }
   showDimension(dim);
 return(
-<><div><select id="selectButton" value={dim} onChange={handleChange}>
+<><div className="sel"><select id="selectButton" value={dim} onChange={handleChange}>
   <option value="danceability">Danceability</option><option value="energy">Energy</option>
 <option value="acousticness">Acousticness</option>
 <option value="instrumentalness">Instrumentalness</option><option value="valence">Valence</option><option value="liveness">Liveness</option>

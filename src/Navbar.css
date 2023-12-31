@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
 .navbar {
   width: 100vw;
-  height: 50px;
+  height: 8vh;
   background: #f3f3f3;
   text-decoration: none;
 }
@@ -14,12 +17,13 @@
 
 .navbar a {
   color: #2d4580;
-  font-family: Arial;
-  font-weight: 700;
+  font-family: Poppins,sans-serif;
   text-decoration: none;
-  margin-top: 20px ;
-  padding-left:4vw;
-  font-size: 9px;
+  margin-top: 2.5vh ;
+  padding-left: 2.5vw;
+  font-size: 10.5px;
+  font-weight:600;
+  letter-spacing:0.08rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -27,8 +31,18 @@
     height: 60px;
   }
   .navbar a {
-    margin-top: 25px;
+    margin-top: 20px;
     padding-left: 15px;
-    font-size: 15px;
+    font-size: 18px;
+    letter-spacing:0.1rem;
+  }
+}
+
+@media screen and (min-width:1050px){
+  .navbar {
+    height:80px;
+  }
+  .navbar a {
+    padding-left:20px;
   }
 }

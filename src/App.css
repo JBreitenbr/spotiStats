@@ -16,7 +16,7 @@ body {
   background-color:#21234a;
 }
 
-#canvas_bar,#canvas_box, #canvas_hist,#canvas_pic,#canvas_scatter {
+#canvas_bar,#canvas_box, #canvas_hist,#canvas_scatter {
   width: 358px;
   height: 520px;
   background-color:papayawhip;
@@ -38,11 +38,6 @@ body {
   border-radius: 5px;
   visibility: hidden;
 }
-/*
-.circles {
-  opacity:0.85;
-  stroke: black;
-  }*/
 
 #selectButton {
   margin-top: 5vh; 
@@ -56,9 +51,10 @@ body {
 }
 
 .wordcloud {
-  margin-top:110px;
-  height:300px;
-  width:300px;
+  margin-top: 15vh;
+  height:350px;
+  width:350px;
+  border: 30px solid #fff7eb;
 }
 
 .cloud-wrap { 
@@ -71,7 +67,7 @@ body {
 
 @media screen and (min-width:768px) and (min-aspect-ratio: 1.2) {
 
- #canvas_bar,#canvas_hist,#canvas_box,#canvas_scatter,#canvas_pic {
+ #canvas_bar,#canvas_hist,#canvas_box,#canvas_scatter {
    height: 560px;
    width: 610px;
  }
@@ -81,14 +77,15 @@ body {
  }
   
  #selectButton {
-  height: 28px;
-  font-size: 14px;
+  height: 32px;
+  font-size: 16px;
   }
   
 .wordcloud {
-  margin-top:20vh;
-  height:450px;
-  width:450px;
+  margin-top: 5vh;
+  height:550px;
+  width:550px;
+  border: 50px solid #fff7eb;
 }
 }
 
@@ -104,9 +101,15 @@ body {
  }
   
  #selectButton {
-  height: 28px;
-  font-size: 14px;
+  height: 32px;
+  font-size: 16px;
  }
+
+.wordcloud {
+  height:550px;
+  width:550px;
+  border: 50px solid #fff7eb;
+}
 }
 
 @media screen and (min-width:1050px){
@@ -119,10 +122,17 @@ body {
      height: 600px;
    }
 
-   #selectButton {
-    height: 32px;
-    font-size: 16px;
+   #selectButton{
+    margin-top: 3vh;
+    height: 36px;
+    font-size: 20px;
     }
+  
+  .wordcloud {
+  height:680px;
+  width:680px;
+  border: 70px solid #fff7eb;
+}
 }
 
 @media screen and (min-width:1300px){
@@ -136,8 +146,12 @@ body {
    }
   
    #selectButton {
-    height: 36px;
-    font-size: 18px;
+    height: 40px;
+    font-size: 24px;
     }
-  
+  .wordcloud {
+    height:720px;
+    width:720px;
+    border: 90px solid #fff7eb;
+  }
 }

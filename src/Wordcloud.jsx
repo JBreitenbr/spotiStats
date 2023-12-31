@@ -9,9 +9,8 @@ const Wordcloud=() =>{
   d3.select("#canvas_scatter").remove();
   return (
   <div className="cloud-wrap">
-    <div id="canvas_pic">
      <img className="wordcloud" src={artists_weighted}/>
-    </div></div>
+    </div>
   )
 }
 

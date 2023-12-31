@@ -6,13 +6,13 @@ const Navbar=() => {
   return (
     <div className="navbar" >
       <div className="links">
-        <Link to="/"></Link>
-        <Link to="/spotistats"></Link>
-        <Link to="/top30">Top 30 Artists</Link>
-        <Link to="/histogram">Histograms</Link>
-        <Link to="/boxplot">Boxplots</Link>
-        <Link to="/scatter">Scatterplots</Link>
-  <Link to="/wordcloud">Wordcloud</Link>      
+        <Link to="/" style={{"paddingLeft":"0.1vw"}}></Link>
+        <Link to="/spotiStats" style={{"paddingLeft":"0.1vw"}}></Link>
+        <Link to="/spotiStats/top30">Artists</Link>
+        <Link to="/spotiStats/histogram">Histograms</Link>
+        <Link to="/spotiStats/boxplot">Boxplots</Link>
+        <Link to="/spotiStats/scatter">Scatterplots</Link>
+  <Link to="/spotiStats/wordcloud">Wordcloud</Link>      
       </div>
     </div>
   );

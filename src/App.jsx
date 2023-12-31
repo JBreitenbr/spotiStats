@@ -13,12 +13,12 @@ export default function App() {
       <Router>
         <Navbar/>
         <Routes>
-          <Route path="/" element={<Barchart/>}/><Route path="/" element={<Barchart/>}/>
-          <Route path="/top30" element={<Barchart/>}/>
-          <Route path="/histogram" element={<Histogram/>}/>
-          <Route path="/boxplot" element={<Boxplot/>}/>
-          <Route path="/scatter" element={<Scatterplot/>}/>
-                    <Route path="/wordcloud" element={<Wordcloud/>}/>
+           <Route path="/" element={<Barchart/>}/><Route path="/spotiStats" element={<Barchart/>}/>
+          <Route path="/spotiStats/top30" element={<Barchart/>}/>
+          <Route path="/spotiStats/histogram" element={<Histogram/>}/>
+          <Route path="/spotiStats/boxplot" element={<Boxplot/>}/>
+          <Route path="/spotiStats/scatter" element={<Scatterplot/>}/>
+                    <Route path="/spotiStats/wordcloud" element={<Wordcloud/>}/>
           </Routes>
         </Router>
     </>
