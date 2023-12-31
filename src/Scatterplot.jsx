@@ -29,7 +29,7 @@ canvas.append('g').style("font", `${w<h?(w/88+h/88):((w>700?w/110:w/93)+h/93)}px
 canvas.append('g').style("font", `${w<h?(w/88+h/88):((w>700?w/110:w/93)+h/93)}px nunito`).call(xAxis).attr('transform','translate(0,'+(h-pad)+')');
 canvas.append("text").attr("x",w-2*pad).attr("y",w<400?0.98*h:0.96*h).text(corrDict[dim][0].slice(0,1).toUpperCase()+corrDict[dim][0].slice(1)).style("font", `${w<h?(w/77+h/77):((w>700?w/93:w/83)+h/83)}px nunito`);
 canvas.append("text").attr("x",0.05*w).attr("y",w<400?0.05*h:0.07*h).text(corrDict[dim][1].slice(0,1).toUpperCase()+corrDict[dim][1].slice(1)).style("font", `${w<h?(w/77+h/77):((w>700?w/93:w/83)+h/83)}px nunito`);
-if(corrDict[dim][1]=="loudness") {canvas.append("text").attr("x",w<400?60:xScale(0)).attr("y",w<400?0.08*h:0.1*h).text("dB").style("font", `${w<h?(w/77+h/77):((w>700?w/93:w/83)+h/83)}px nunito`);}
+if(corrDict[dim][1]=="loudness") {canvas.append("text").attr("x",w<400?55:xScale(0)).attr("y",w<400?0.08*h:0.1*h).text("dB").style("font", `${w<h?(w/77+h/77):((w>700?w/93:w/83)+h/83)}px nunito`);}
 canvas.append("text").attr("x",w-4*pad).attr("y",w<400?0.05*h:0.07*h).text("Correlation: "+corrs[dim]).style("font", `${w<h?(w/65+h/65):((w>700?w/70:w/60)+h/60)}px nunito`);
 d3.csv("https://raw.githubusercontent.com/JBreitenbr/spotiStats/main/src/kmeans_rnd.csv",(d)=>{
   console.log(xScale(d[corrDict[dim][0]]));
