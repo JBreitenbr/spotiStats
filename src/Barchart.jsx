@@ -31,7 +31,7 @@ else {
 canvas.append('g').style("font",w<700?"11px nunito":w<900?"14px nunito":"16px nunito").call(yAxis).attr('transform','translate('+1.9*pad+','+ (-1)*yScale.bandwidth()+')');
 }
 let favs30=favs.slice(0,30);
-/*canvas.append("text").attr("x",xScale(0)).attr("y",w<580?25:w<700?40:w<900?75:90).text("Artists: Top 30").style("font",w<580?"16px nunito":w<700?"20px nunito":w<900?"29px nunito":"32px nunito");*/
+canvas.append("text").attr("x",xScale(0)).attr("y",w<580?25:w<700?40:w<900?75:90).text("Artists: Top 30").style("font",w<580?"16px nunito":w<700?"20px nunito":w<900?"29px nunito":"32px nunito");
 canvas.append("text").attr("x",w<580?w-1.5*pad:w-1.8*pad).attr("y",pad+28*yScale.bandwidth()).text("minutes played").style("font",w<580?"9px nunito":w<700?"12.5px nunito":w<900?"16px nunito":"18px nunito");
 let bBar=xScale(3391.78)-xScale(0);
 for(let i=0;i<30;i++)   {canvas.append("rect").attr("x",w<580?2.4*pad:1.9*pad).attr("y",yScale(favs30[i][0])-yScale.bandwidth()).attr("height",yScale.bandwidth()).attr("width",favs30[i][1]/favs30[0][1]*bBar).attr("fill","#cb99c9").attr("stroke","#21234a");}
